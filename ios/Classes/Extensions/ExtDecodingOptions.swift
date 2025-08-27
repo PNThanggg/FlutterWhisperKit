@@ -120,7 +120,7 @@ extension DecodingOptions {
                 }
             default:
                 throw NSError(
-                    domain: "FlutterWhisperkitApple",
+                    domain: "FlutterWhisperKit",
                     code: 1001,
                     userInfo: [
                         NSLocalizedDescriptionKey: "Unexpected key in decoding options: \(key)"

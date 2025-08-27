@@ -1,4 +1,5 @@
 import WhisperKit
+
 extension ModelSupportConfig {
     func toJson() -> [String: Any] {
         return [
@@ -10,5 +11,3 @@ extension ModelSupportConfig {
         ]
     }
 }
-
-    

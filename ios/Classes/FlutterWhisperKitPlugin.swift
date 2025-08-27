@@ -9,11 +9,6 @@ import WhisperKit
   #error("Unsupported platform.")
 #endif
 
-/// Flutter WhisperKit Apple Plugin
-///
-/// This plugin provides WhisperKit functionality to Flutter applications on Apple platforms.
-/// It handles model loading, audio transcription, and real-time recording capabilities.
-
 private let transcriptionStreamChannelName = "flutter_whisper_kit/transcription_stream"
 private let modelProgressStreamChannelName = "flutter_whisper_kit/model_progress_stream"
 
