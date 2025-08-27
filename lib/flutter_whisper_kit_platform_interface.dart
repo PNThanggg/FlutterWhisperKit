@@ -26,4 +26,8 @@ abstract class FlutterWhisperKitPlatform extends PlatformInterface {
   Future<String?> getPlatformVersion() {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
+
+  Future<void> transcribeAudio(String filePath) {
+    throw UnimplementedError('transcribeAudio() has not been implemented.');
+  }
 }

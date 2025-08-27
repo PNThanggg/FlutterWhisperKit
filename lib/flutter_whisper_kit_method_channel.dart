@@ -14,4 +14,9 @@ class MethodChannelFlutterWhisperKit extends FlutterWhisperKitPlatform {
     final version = await methodChannel.invokeMethod<String>('getPlatformVersion');
     return version;
   }
+
+  @override
+  Future<void> transcribeAudio(String filePath) async {
+    await methodChannel.invokeMethod('transcribeAudio', {'filePath': filePath});
+  }
 }
