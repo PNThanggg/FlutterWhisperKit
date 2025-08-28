@@ -10,8 +10,7 @@ void main() {
   group('WhisperKit Integration Tests', () {
     setUp(() {
       // Mock the method channels to prevent MissingPluginException
-      TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
-          .setMockMethodCallHandler(
+      TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger.setMockMethodCallHandler(
         const MethodChannel('flutter_whisper_kit'),
         (MethodCall methodCall) async {
           return null;
@@ -19,8 +18,7 @@ void main() {
       );
 
       // Mock event channels for streams
-      TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
-          .setMockMethodCallHandler(
+      TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger.setMockMethodCallHandler(
         const MethodChannel('flutter_whisper_kit/transcription_stream'),
         (MethodCall methodCall) async {
           if (methodCall.method == 'listen') {
@@ -30,8 +28,7 @@ void main() {
         },
       );
 
-      TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
-          .setMockMethodCallHandler(
+      TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger.setMockMethodCallHandler(
         const MethodChannel('flutter_whisper_kit/model_progress_stream'),
         (MethodCall methodCall) async {
           if (methodCall.method == 'listen') {
@@ -42,8 +39,7 @@ void main() {
       );
     });
 
-    testWidgets('App loads and main UI sections are present',
-        (WidgetTester tester) async {
+    testWidgets('App loads and main UI sections are present', (WidgetTester tester) async {
       // Launch the app
       await tester.pumpWidget(const MyApp());
       // Use pump with fixed duration instead of pumpAndSettle to avoid timeout
@@ -62,8 +58,7 @@ void main() {
       expect(find.text('Select Model: '), findsOneWidget);
     });
 
-    testWidgets('Model dropdown and language selection',
-        (WidgetTester tester) async {
+    testWidgets('Model dropdown and language selection', (WidgetTester tester) async {
       await tester.pumpWidget(const MyApp());
       await tester.pump(const Duration(seconds: 1));
 

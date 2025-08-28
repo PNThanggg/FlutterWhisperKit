@@ -37,8 +37,13 @@ class TranscriptionStream implements IDisposable {
       .map((event) => (event as TranscriptionResultEvent).result);
 
   /// Stream of progress updates filtered from events
-  Stream<double> get progress =>
-      _controller.stream.where((event) => event is ProgressEvent).map((event) => (event as ProgressEvent).progress);
+  Stream<double> get progress => _controller.stream
+      .where(
+        (event) => event is ProgressEvent,
+      )
+      .map(
+        (event) => (event as ProgressEvent).progress,
+      );
 
   /// Add an event to the stream
   void add(TranscriptionEvent event) {
@@ -73,10 +78,14 @@ class BufferedTranscriptionStream implements IDisposable {
     this.maxBufferSize = 100,
     this.overflowStrategy = OverflowStrategy.drop,
   }) : _controller = StreamController<TranscriptionEvent>.broadcast();
+
   final int maxBufferSize;
   final OverflowStrategy overflowStrategy;
+
   final List<TranscriptionEvent> _buffer = [];
+
   final StreamController<TranscriptionEvent> _controller;
+
   bool _disposed = false;
 
   /// Stream of buffered events
