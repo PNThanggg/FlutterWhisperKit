@@ -22,7 +22,8 @@ A new Flutter project.
   s.swift_version = '5.0'
 
   s.dependency 'WhisperKit'
-  
+#   s.dependency 'Transformers'
+
   # If your plugin requires a privacy manifest, for example if it uses any
   # required reason APIs, update the PrivacyInfo.xcprivacy file to describe your
   # plugin's privacy impact, and then uncomment this line. For more information,

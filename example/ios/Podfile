@@ -30,10 +30,8 @@ flutter_ios_podfile_setup
 target 'Runner' do
   use_frameworks!
 
-#  pod 'WhisperKit', :git => 'https://github.com/argmaxinc/WhisperKit.git'
   pod 'WhisperKit', :podspec => '../../ios/WhisperKit.podspec'
-#   pod 'SwiftTokenizer', :git => 'https://github.com/RayKitajima/SwiftTokenizer.git'
-#   pod 'Transformers', :git => 'https://github.com/huggingface/swift-transformers.git'
+#   pod 'Transformers', :podspec => '../../ios/SwiftTransformers.podspec'
 
   flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
   target 'RunnerTests' do
